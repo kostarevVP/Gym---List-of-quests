@@ -1,0 +1,31 @@
+using Assets.LocalPackages.WKosArch.Scripts.Common.DIContainer;
+using WKosArch.Domain.Contexts;
+using WKosArch.Domain.Features;
+using WKosArch.Extentions;
+using UnityEngine;
+    
+
+ #ROOTNAMESPACEBEGIN#
+    [CreateAssetMenu(fileName = " #SCRIPTNAME#", menuName = "Game/Installers/#SCRIPTNAME#")]
+    public class  #SCRIPTNAME# : FeatureInstaller
+    {
+
+        public override IFeature Create(IDIContainer container)
+        {
+            var feature = new Feature();
+        
+            BindFeature(container, feature);
+
+            return feature;
+        }
+
+        public override void Dispose() { }
+
+        private void BindFeature(IDIContainer container, IFeature feature)
+        {
+            container.Bind(feature);
+            Log.PrintColor($"[#SCRIPTNAME#] Create and Bind", Color.cyan);
+        }
+    }
+
+#ROOTNAMESPACEEND#

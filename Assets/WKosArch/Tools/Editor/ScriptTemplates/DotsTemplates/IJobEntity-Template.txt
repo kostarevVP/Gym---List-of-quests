@@ -1,0 +1,10 @@
+using Unity.Burst;
+using Unity.Entities;
+using Unity.Mathematics;
+ 
+[BurstCompile]
+partial struct #SCRIPTNAME# : IJobEntity 
+{
+  #NOTRIM#
+
+}

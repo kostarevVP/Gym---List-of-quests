@@ -1,0 +1,11 @@
+using Unity.Entities;
+using Unity.Mathematics;
+using UnityEngine;
+using System;
+
+ 
+[Serializable]
+public struct #SCRIPTNAME# : IComponentData 
+{
+ #NOTRIM#
+}

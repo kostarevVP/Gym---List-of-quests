@@ -1,0 +1,13 @@
+WindowModel : WindowViewModel
+
+ #ROOTNAMESPACEBEGIN#
+public class #SCRIPTNAME# : WindowViewModel
+{
+
+}
+
+public class Window#SCRIPTNAME# : Window<#SCRIPTNAME#>
+{
+    
+}
+#ROOTNAMESPACEEND#

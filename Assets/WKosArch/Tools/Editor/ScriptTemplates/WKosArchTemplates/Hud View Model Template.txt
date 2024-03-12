@@ -1,0 +1,13 @@
+using WKosArch.UIService.Views.HUD;
+
+ #ROOTNAMESPACEBEGIN#
+public class #SCRIPTNAME# : HudViewModel
+{
+
+}
+
+public class Hud#SCRIPTNAME# : Hud<#SCRIPTNAME#>
+{
+    
+}
+#ROOTNAMESPACEEND#
