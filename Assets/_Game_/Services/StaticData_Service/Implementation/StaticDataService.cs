@@ -30,7 +30,7 @@ namespace WKosArch.Services.StaticDataServices
 
         private IAssetProviderService _assetProviderService;
 
-        private GameProgressConfig _gameProgressStaticData = new();
+        private GameProgressConfig _gameProgressStaticData;
         private Dictionary<string, UISceneConfig> _sceneConfigsMap = new();
         private Dictionary<RenderingQuality, RenderPipelineAsset> _renderQualityConfigMap = new();
 

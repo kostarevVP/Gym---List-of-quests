@@ -10,18 +10,21 @@ namespace WKosArch.Services.ProgressService
     [CreateAssetMenu(fileName = "ProgressService_Installer", menuName = "Game/Installers/ProgressService_Installer")]
     public class ProgressService_Installer : FeatureInstaller
     {
-        private IProgressService _service;
-
         public override IFeature Create(IDIContainer container)
         {
-            _service = new ProgressService();
+            IProgressService service = new ProgressService();
 
-            container.Bind(_service);
+            BindFeature(container, service);
 
-            Log.PrintColor($"[IProgressService] Create and Bind", Color.cyan);
-            return _service;
+            return service;
         }
 
         public override void Dispose() { }
+
+        private void BindFeature(IDIContainer container, IProgressService feature)
+        {
+            container.Bind(feature);
+            Log.PrintColor($"[IProgressService] Create and Bind", Color.cyan);
+        }
     }
 }

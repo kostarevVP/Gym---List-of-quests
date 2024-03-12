@@ -21,7 +21,6 @@ public class QuestFeature : IQuestFeature
         _staticDataService = staticDataService;
 
         Init();
-        PrintLog();
     }
 
 
@@ -30,6 +29,8 @@ public class QuestFeature : IQuestFeature
         _collectingQuests = _staticDataService.ColectionQuests;
         _journeyQuests = _staticDataService.JourneyQuests;
     }
+
+
     private void PrintLog()
     {
         foreach (var quest in _collectingQuests)
