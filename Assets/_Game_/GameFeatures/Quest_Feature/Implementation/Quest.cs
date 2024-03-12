@@ -1,12 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Quest : IQuest
+public abstract class Quest : IQuest
 {
-    public bool IsDone => throw new System.NotImplementedException();
+    public bool IsDone => _isDone;
 
-    public string Name => throw new System.NotImplementedException();
+    public string Name => _name;
 
-    public string Description => throw new System.NotImplementedException();
+    public string Description => _descrition;
+
+    public float ExecutionProgress => _executionProgress;
+
+    private bool _isDone;
+    private string _name;
+    private string _descrition;
+    private float _executionProgress;
+
+    public Quest(string name, string descrition)
+    {
+        _name = name;
+        _descrition = descrition;
+    }
 }

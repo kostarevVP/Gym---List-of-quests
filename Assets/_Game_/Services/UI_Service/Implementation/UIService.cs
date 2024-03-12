@@ -1,5 +1,6 @@
 using Assets.LocalPackages.WKosArch.Scripts.Common.DIContainer;
 using System;
+using WKosArch.Extentions;
 using WKosArch.Services.Scenes;
 using WKosArch.Services.StaticDataServices;
 using WKosArch.Services.UIService.UI;
@@ -41,6 +42,7 @@ namespace WKosArch.Services.UIService
             //var config = _staticDataService.SceneConfigsMap[sceneName];
             if (_staticDataService.SceneConfigsMap.TryGetValue(sceneName, out var config))
             {
+                Log.PrintRed("UIService SceneLoaded");
                 UI.Build(config);
             }
         }

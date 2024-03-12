@@ -2,6 +2,8 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using WKosArch.Extentions;
 using WKosArch.Services.Scenes;
+using WKosArch.Services.UIService;
+using WKosArch.Services.UIService.UI;
 
 namespace WKosArch.Features.LoadLevelFeature
 {
@@ -10,13 +12,15 @@ namespace WKosArch.Features.LoadLevelFeature
         public bool IsReady => _isReady;
 
         private ISceneManagementService _sceneManagementService;
+        private IUserInterface _ui;
         private bool _isReady;
 
 
 
-        public LoadLevelFeature(ISceneManagementService sceneManagementService)
+        public LoadLevelFeature(ISceneManagementService sceneManagementService, IUserInterface ui)
         {
             _sceneManagementService = sceneManagementService;
+            _ui = ui;
         }
 
         public UniTask InitializeAsync()
@@ -59,6 +63,7 @@ namespace WKosArch.Features.LoadLevelFeature
         {
             //in this point load player and all environment
             Log.PrintYellow("Load environment");
+            //_ui.Show<HomeSettingButtonViewModel>();
         }
 
         public void PlayStartLevelAnimation()

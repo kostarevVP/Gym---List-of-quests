@@ -20,6 +20,8 @@ MonoBehaviour:
   - {fileID: 4600851426264866564, guid: b995157c9ed9978499a89e395fc692ac, type: 3}
   - {fileID: 445053327419328153, guid: b0b28945d83435441b9737d76721a1a5, type: 3}
   _hudPrefabs: []
-  SceneName: []
-  SceneIndex: 
-  _scenes: []
+  SceneName:
+  - Quest_Scene
+  SceneIndex: 01000000
+  _scenes:
+  - {fileID: 102900000, guid: f77eb623bfe4bb14faebe16f012b5529, type: 3}

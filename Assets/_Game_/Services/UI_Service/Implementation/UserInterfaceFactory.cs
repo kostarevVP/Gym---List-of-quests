@@ -110,7 +110,6 @@ namespace Assets._Game_.Services.UI_Service.Implementation
                     prefabUiViewModel.InjectDI(_diContainer);
 
                     _createdUiViewModelsCache[typeViewModel] = prefabUiViewModel;
-
                 }
             }
 

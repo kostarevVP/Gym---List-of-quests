@@ -4,6 +4,7 @@ using WKosArch.Domain.Features;
 using WKosArch.Extentions;
 using WKosArch.Services.Scenes;
 using UnityEngine;
+using WKosArch.Services.UIService;
 
 namespace WKosArch.Features.LoadLevelFeature
 {
@@ -15,8 +16,9 @@ namespace WKosArch.Features.LoadLevelFeature
         public override IFeature Create(IDIContainer container)
         {
             var sceneManagementService = container.Resolve<ISceneManagementService>();
+            var ui = container.Resolve<IUIService>().UI;
 
-            _loadLevelFeature = new LoadLevelFeature(sceneManagementService);
+            _loadLevelFeature = new LoadLevelFeature(sceneManagementService, ui);
 
             container.Bind(_loadLevelFeature);
 
