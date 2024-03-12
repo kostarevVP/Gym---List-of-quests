@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73563dfc4dc8cc04dbc12214ecb33b99, type: 3}
   m_Name: NewGameProgressStaticData
   m_EditorClassIdentifier: 
-  SceneName: DOTS_Prototype_Scene
-  SceneIndex: 2
-  _firstSceneToLoad: {fileID: 102900000, guid: ace33b71f17b13747b543211289922da, type: 3}
+  SceneName: Quest_Scene
+  SceneIndex: 1
+  _firstSceneToLoad: {fileID: 102900000, guid: f77eb623bfe4bb14faebe16f012b5529, type: 3}

@@ -614,7 +614,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b71d89225d30d5e4495e8222d202647a, type: 2}
   _gameplayFeatureInstallers: []
   _sceneContexts:
-  - {fileID: 0}
   - {fileID: 961713362}
 --- !u!1 &7073980424495917774
 GameObject:
