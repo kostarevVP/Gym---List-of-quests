@@ -11,6 +11,10 @@ namespace WKosArch.Services.StaticDataServices
         private const string UISceneConfigsFolderPath = "SeneConfigs";
         private const string QualitySettinsPath = "URPRenderersConfig";
 
+        private const string CollectingQuestsFolderPath = "CollectingQuests";
+        private const string JourneyQuestsFolderPath = "JourneyQuests";
+
+
 
         public bool IsReady => _isReady;
 
@@ -20,12 +24,19 @@ namespace WKosArch.Services.StaticDataServices
 
         public Dictionary<RenderingQuality, RenderPipelineAsset> RenderQualityConfigMap => _renderQualityConfigMap;
 
+        public List<ICollectionQuest> ColectionQuests => _collectingQuestList;
+        public List<IJourneyQuest> JourneyQuests => _journeyQuestList;
+
 
         private IAssetProviderService _assetProviderService;
 
-        private GameProgressConfig _gameProgressStaticData;
-        private Dictionary<string, UISceneConfig> _sceneConfigsMap = new Dictionary<string, UISceneConfig>();
-        private Dictionary<RenderingQuality, RenderPipelineAsset> _renderQualityConfigMap;
+        private GameProgressConfig _gameProgressStaticData = new();
+        private Dictionary<string, UISceneConfig> _sceneConfigsMap = new();
+        private Dictionary<RenderingQuality, RenderPipelineAsset> _renderQualityConfigMap = new();
+
+        private List<ICollectionQuest> _collectingQuestList = new();
+        private List<IJourneyQuest> _journeyQuestList = new();
+
 
 
         private bool _isReady;
@@ -38,10 +49,13 @@ namespace WKosArch.Services.StaticDataServices
             LoadSceneConfigs();
             LoadQualityConfigs();
 
+            LoadCollectionQuests();
+            LoadJounreyQuests();
+
             _isReady = true;
         }
 
-        public void Dispose() => 
+        public void Dispose() =>
             Clear();
 
         private void LoadGameProgressConfig()
@@ -64,6 +78,38 @@ namespace WKosArch.Services.StaticDataServices
                 }
             }
         }
+
+        private void LoadCollectionQuests()
+        {
+            var questConfigs = _assetProviderService.LoadAll<CollectingQuestConfig>(CollectingQuestsFolderPath);
+
+            foreach (var config in questConfigs)
+            {
+                ICollectionQuest quest = new CollectioinQuest(
+                    config.Name,
+                    config.Description,
+                    config.StuffName,
+                    config.Amount);
+
+                _collectingQuestList.Add(quest);
+            }
+        }
+
+        private void LoadJounreyQuests()
+        {
+            var questConfigs = _assetProviderService.LoadAll<JourneyQuestConfig>(JourneyQuestsFolderPath);
+
+            foreach (var config in questConfigs)
+            {
+                IJourneyQuest quest = new JourneyQuest(
+                    config.Name,
+                    config.Description,
+                    config.PlaceArrival);
+
+                _journeyQuestList.Add(quest);
+            }
+        }
+
         private void LoadQualityConfigs()
         {
             var qualityConfig = _assetProviderService.Load<URPRenderersConfig>(QualitySettinsPath);
@@ -77,6 +123,9 @@ namespace WKosArch.Services.StaticDataServices
             _gameProgressStaticData = null;
             _sceneConfigsMap.Clear();
             _renderQualityConfigMap.Clear();
+
+            _collectingQuestList.Clear();
+            _journeyQuestList.Clear();
         }
     }
 }

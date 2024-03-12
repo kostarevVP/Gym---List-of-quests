@@ -6,14 +6,14 @@ public interface IQuest
     float ExecutionProgress { get; }
 }
 
-public interface ICountQuest : IQuest
+public interface ICollectionQuest : IQuest
 {
     string StuffName { get; }   
-    int Count { get; }
-    int CurrentCount { get; }
+    int Amount { get; }
+    int CurrentAmount { get; }
 }
 
-public interface IPointQuest : IQuest
+public interface IJourneyQuest : IQuest
 {
-    string PointName { get; }
+    string PlaceArrival { get; }
 }

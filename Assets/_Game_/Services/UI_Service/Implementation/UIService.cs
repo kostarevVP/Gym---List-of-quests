@@ -42,8 +42,11 @@ namespace WKosArch.Services.UIService
             //var config = _staticDataService.SceneConfigsMap[sceneName];
             if (_staticDataService.SceneConfigsMap.TryGetValue(sceneName, out var config))
             {
-                Log.PrintRed("UIService SceneLoaded");
                 UI.Build(config);
+            }
+            else
+            {
+                Log.PrintWarning($"Try to load for {sceneName} SceneConfig {config} in SceneConfigsMap result false");
             }
         }
     }
