@@ -15,8 +15,6 @@ namespace Assets._Game_.Services.UI_Service.Views.UiView
         [Header("Transitions")]
         [SerializeField] private Transition _transitionIn = default;
         [SerializeField] private Transition _transitionOut = default;
-        [Header("============")]
-        private byte needForSpaceAtribute;
 
         public bool IsShown { get; private set; }
 
