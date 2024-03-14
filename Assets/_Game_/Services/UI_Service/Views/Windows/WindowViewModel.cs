@@ -19,7 +19,6 @@ namespace WKosArch.UIService.Views.Windows
 
         private IWindow _window;
 
-
         public virtual void Back() => UI.Back();
 
         internal void Close() => UI.CloseAllWindowInStack();

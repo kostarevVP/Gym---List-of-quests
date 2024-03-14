@@ -4,6 +4,7 @@ using Assets.LocalPackages.WKosArch.Scripts.Common.DIContainer;
 using System;
 using UnityEngine;
 using WKosArch.Extentions;
+using WKosArch.UIService.Views.Widgets;
 using WKosArch.UIService.Views.Windows;
 
 namespace WKosArch.Services.UIService.UI
@@ -108,6 +109,14 @@ namespace WKosArch.Services.UIService.UI
             }
         }
 
+        public TWidgetViewModel ShowWidget<TWidgetViewModel>(Transform root) where TWidgetViewModel : WidgetViewModel
+        {
+            Type widgetModelType = typeof(TWidgetViewModel);
+            TWidgetViewModel widgetView = _uiFactory.ShowUiView<TWidgetViewModel>(widgetModelType);
+
+            return 
+        }
+
         public void Build(UISceneConfig config)
         {
             _uiFactory.Build(config);
@@ -120,5 +129,6 @@ namespace WKosArch.Services.UIService.UI
 
         private bool IsHomeWindowType(Type windowType) =>
             typeof(IHomeWindow).IsAssignableFrom(windowType);
+
     }
 }

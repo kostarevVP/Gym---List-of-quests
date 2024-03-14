@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using WKosArch.Extentions;
 using WKosArch.UIService.Views.HUD;
+using WKosArch.UIService.Views.Widgets;
 using WKosArch.UIService.Views.Windows;
 
 namespace WKosArch.Services.UIService
@@ -14,9 +15,12 @@ namespace WKosArch.Services.UIService
     {
         [SerializeField] private WindowViewModel[] _windowPrefabs;
         [SerializeField] private HudViewModel[] _hudPrefabs;
+        [SerializeField] private WidgetViewModel[] _widgetPrefabs;
 
         public WindowViewModel[] WindowPrefabs => _windowPrefabs;
         public HudViewModel[] HudPrefabs => _hudPrefabs;
+        public WidgetViewModel[] WidgetPrefabs => _widgetPrefabs;
+
 
         [HideInInspector] public string[] SceneName;
         [HideInInspector] public int[] SceneIndex;

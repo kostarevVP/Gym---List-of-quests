@@ -1,4 +1,4 @@
-WindowModel : WindowViewModel
+using WKosArch.UIService.Views.Widgets;
 
  #ROOTNAMESPACEBEGIN#
 public class #SCRIPTNAME# : WidgetViewModel

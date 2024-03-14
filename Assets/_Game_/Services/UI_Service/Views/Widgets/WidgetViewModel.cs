@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets._Game_.Services.UI_Service.Views.UiView;
+using UnityEngine;
 
 namespace WKosArch.UIService.Views.Widgets
 {
@@ -8,13 +9,16 @@ namespace WKosArch.UIService.Views.Widgets
         [SerializeField] private bool _manualRefreshing;
         [Tooltip("If enabled you have to call Subscribe() and Unsubscribe methods manually. If not - it calls automatically from the OnEnable() and OnDisable() methods")]
         [SerializeField] private bool _manualSubscription;
-        
-        public IWidget Widget {
+
+        public bool IsPreCached;
+
+        public IWidget Widget
+        {
             get
             {
                 if (_widget == null)
                 {
-                    _widget = (IWidget) View;
+                    _widget = (IWidget)View;
                 }
 
                 return _widget;
@@ -34,7 +38,7 @@ namespace WKosArch.UIService.Views.Widgets
             {
                 Subscribe();
             }
-            
+
             OnEnableInternal();
         }
 
@@ -47,7 +51,7 @@ namespace WKosArch.UIService.Views.Widgets
 
             OnDisableInternal();
         }
-        
+
         protected virtual void OnEnableInternal() { }
         protected virtual void OnDisableInternal() { }
     }

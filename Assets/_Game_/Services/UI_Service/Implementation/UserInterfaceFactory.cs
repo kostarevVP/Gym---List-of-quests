@@ -8,7 +8,9 @@ using WKosArch.Extentions;
 using WKosArch.Services.UIService;
 using WKosArch.Services.UIService.Common;
 using WKosArch.Services.UIService.UI;
+using WKosArch.UIService.Views;
 using WKosArch.UIService.Views.HUD;
+using WKosArch.UIService.Views.Widgets;
 using WKosArch.UIService.Views.Windows;
 
 namespace Assets._Game_.Services.UI_Service.Implementation
@@ -24,7 +26,8 @@ namespace Assets._Game_.Services.UI_Service.Implementation
 
         private static UserInterfaceFactory _instance;
 
-        private Dictionary<Type, UiViewModel> _createdUiViewModelsCache = new Dictionary<Type, UiViewModel>();
+        private Dictionary<Type, UiViewModel> _createdUiViewModelsCache = new();
+        private Dictionary<Type, WidgetViewModel> _createdWidgetModelCache = new();
 
         private IDIContainer _diContainer;
         private IUserInterface _ui;
@@ -157,15 +160,17 @@ namespace Assets._Game_.Services.UI_Service.Implementation
             }
 
             _createdUiViewModelsCache.Clear();
+            _createdWidgetModelCache.Clear();   
         }
 
         private void CreateNewUiViews()
         {
 
-            var windowPrefabsForCreating = _uiSceneConfig.WindowPrefabs;
-            var hudPrefabsForCreating = _uiSceneConfig.HudPrefabs;
+            WindowViewModel[] windowPrefabsForCreating = _uiSceneConfig.WindowPrefabs;
+            HudViewModel[] hudPrefabsForCreating = _uiSceneConfig.HudPrefabs;
+            WidgetViewModel[] widgetPrefabsForCreating = _uiSceneConfig.WidgetPrefabs;
 
-            foreach (var prefab in windowPrefabsForCreating)
+            foreach (WindowViewModel prefab in windowPrefabsForCreating)
             {
                 if (prefab.WindowSettings.IsPreCached)
                 {
@@ -173,27 +178,14 @@ namespace Assets._Game_.Services.UI_Service.Implementation
                 }
             }
 
-            foreach (var prefab in hudPrefabsForCreating)
+            foreach (HudViewModel prefab in hudPrefabsForCreating)
             {
                 if (prefab.WindowSettings.IsPreCached)
                 {
                     AddToUiViewModelToCash(prefab);
                 }
             }
-        }
 
-        private static void HideUiViewModelInstantly<TUiViewModel>(TUiViewModel prefabUiViewModel) where TUiViewModel : UiViewModel
-        {
-            if (prefabUiViewModel is WindowViewModel)
-            {
-                var windowViewModel = prefabUiViewModel as WindowViewModel;
-                windowViewModel.Window.HideInstantly();
-            }
-            if (prefabUiViewModel is HudViewModel)
-            {
-                var windowViewModel = prefabUiViewModel as HudViewModel;
-                windowViewModel.Hud.HideInstantly();
-            }
         }
 
         private TUiViewModel AddToUiViewModelToCash<TUiViewModel>(TUiViewModel uiViewModel) where TUiViewModel : UiViewModel
@@ -210,5 +202,20 @@ namespace Assets._Game_.Services.UI_Service.Implementation
 
             return viewModel;
         }
+
+        private static void HideUiViewModelInstantly<TUiViewModel>(TUiViewModel prefabUiViewModel) where TUiViewModel : ViewModel
+        {
+            if (prefabUiViewModel is WindowViewModel)
+            {
+                var windowViewModel = prefabUiViewModel as WindowViewModel;
+                windowViewModel.Window.HideInstantly();
+            }
+            if (prefabUiViewModel is HudViewModel)
+            {
+                var windowViewModel = prefabUiViewModel as HudViewModel;
+                windowViewModel.Hud.HideInstantly();
+            }
+        }
+
     }
 }
