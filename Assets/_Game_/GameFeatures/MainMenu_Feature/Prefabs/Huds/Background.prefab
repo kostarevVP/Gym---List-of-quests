@@ -129,7 +129,7 @@ MonoBehaviour:
   _transitionIn: {fileID: 0}
   _transitionOut: {fileID: 0}
   _rawImage: {fileID: 2936443235124895244}
-  _scrollSpeed: 0.1
+  _scrollSpeed: 0.05
   _xDirection: -1
   _yDirection: -1
 --- !u!114 &7284210044280521407

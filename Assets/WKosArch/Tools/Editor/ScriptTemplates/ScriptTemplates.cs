@@ -51,12 +51,12 @@ namespace WaynGroup.Mgm.Ability.Editor
 
         [MenuItem("Assets/Create/WKosArch/HudViewModel")]
         public static void CreateHudViewModel() =>
-           CreateScriptFromTemplate($"WKosArchTemplates/Hud View Model Template.txt", "HudViewModel.cs");
+           CreateScriptFromTemplate($"WKosArchTemplates/Hud View Model Template.txt", "HudModel.cs");
 
 
         [MenuItem("Assets/Create/WKosArch/WidgetViewModel")]
         public static void CreateWidgetViewModel() =>
-           CreateScriptFromTemplate($"WKosArchTemplates/Widget View Model Template.txt", "WidgetViewModel.cs");
+           CreateScriptFromTemplate($"WKosArchTemplates/Widget View Model Template.txt", "WidgetModel.cs");
 
 
         [MenuItem("Assets/Create/WKosArch/Feature_Installer")]
