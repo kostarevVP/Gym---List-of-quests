@@ -2,8 +2,10 @@
 using Assets.LocalPackages.WKosArch.Scripts.Common.DIContainer;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using WKosArch.Services.UIService;
 using WKosArch.Services.UIService.UI;
+using WKosArch.UIService.Views.Widgets;
 
 namespace Assets._Game_.Services.UI_Service.Implementation
 {
@@ -15,5 +17,7 @@ namespace Assets._Game_.Services.UI_Service.Implementation
         void Construct(IDIContainer dIContainer, IUserInterface userInterface);
         TUiViewModel ShowUiView<TUiViewModel>() where TUiViewModel : UiViewModel;
         TUiViewModel ShowUiView<TUiViewModel>(Type uiViewModelType) where TUiViewModel : UiViewModel;
+        TWidgetViewModel ShowWidgetView<TWidgetViewModel>(Type widgetModelType, Transform root) where TWidgetViewModel : WidgetViewModel;
+
     }
 }

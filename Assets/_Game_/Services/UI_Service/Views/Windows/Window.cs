@@ -11,8 +11,6 @@ namespace WKosArch.UIService.Views.Windows
         [SerializeField] private Button _closeButton;
         [SerializeField] private Button _backButton;
 
-        public bool TestField;
-
         public override void Subscribe()
         {
             base.Subscribe();

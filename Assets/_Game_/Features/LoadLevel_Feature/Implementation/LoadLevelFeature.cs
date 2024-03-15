@@ -63,7 +63,7 @@ namespace WKosArch.Features.LoadLevelFeature
         {
             //in this point load player and all environment
             Log.PrintYellow("Load environment");
-            //_ui.Show<HomeSettingButtonViewModel>();
+            _ui.Show<QuestWindowModel>();
         }
 
         public void PlayStartLevelAnimation()

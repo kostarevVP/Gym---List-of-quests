@@ -3,6 +3,7 @@ using Assets.LocalPackages.WKosArch.Scripts.Common.DIContainer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using WKosArch.Extentions;
 using WKosArch.Services.UIService;
@@ -27,7 +28,7 @@ namespace Assets._Game_.Services.UI_Service.Implementation
         private static UserInterfaceFactory _instance;
 
         private Dictionary<Type, UiViewModel> _createdUiViewModelsCache = new();
-        private Dictionary<Type, WidgetViewModel> _createdWidgetModelCache = new();
+        private Dictionary<Type, WidgetViewModel> _createdWidgetViewModelsCache = new();
 
         private IDIContainer _diContainer;
         private IUserInterface _ui;
@@ -86,6 +87,47 @@ namespace Assets._Game_.Services.UI_Service.Implementation
             ActivateWindowViewModel(uiViewModel);
 
             return uiViewModel;
+        }
+
+        public TWidgetViewModel ShowWidgetView<TWidgetViewModel>(Type widgetModelType, Transform root) where TWidgetViewModel : WidgetViewModel
+        {
+            TWidgetViewModel widgetViewModel = null;
+
+            if (_createdWidgetViewModelsCache.TryGetValue(widgetModelType, out var viewModel))
+            {
+                if (!viewModel.gameObject.IsUnityNull())
+                {
+                    widgetViewModel = viewModel as TWidgetViewModel; 
+                }
+            }
+            else
+            {
+                widgetViewModel = CreateWidgetViewModel<TWidgetViewModel>(widgetModelType, root);
+            }
+
+            return widgetViewModel;
+        }
+
+        private TUiViewModel CreateWidgetViewModel<TUiViewModel>(Type typeViewModel, Transform root) where TUiViewModel : WidgetViewModel
+        {
+            TUiViewModel prefabWidgetViewModel = null;
+
+            if (_uiSceneConfig.TryGetWidgetPrefab(typeViewModel, out TUiViewModel prefab))
+            {
+                if (prefab == null)
+                {
+                    Log.PrintWarning($"Couldn't open window ({typeViewModel}). Maybe its not add to UISceneConfig for this Scene");
+                }
+                else
+                {
+                    prefabWidgetViewModel = Instantiate(prefab, root);
+                    prefabWidgetViewModel.InjectDI(_diContainer);
+
+                    _createdWidgetViewModelsCache[typeViewModel] = prefabWidgetViewModel;
+                }
+            }
+
+            return prefabWidgetViewModel;
         }
 
 
@@ -160,7 +202,7 @@ namespace Assets._Game_.Services.UI_Service.Implementation
             }
 
             _createdUiViewModelsCache.Clear();
-            _createdWidgetModelCache.Clear();   
+            _createdWidgetViewModelsCache.Clear();
         }
 
         private void CreateNewUiViews()

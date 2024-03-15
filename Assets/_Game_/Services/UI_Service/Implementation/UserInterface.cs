@@ -112,9 +112,11 @@ namespace WKosArch.Services.UIService.UI
         public TWidgetViewModel ShowWidget<TWidgetViewModel>(Transform root) where TWidgetViewModel : WidgetViewModel
         {
             Type widgetModelType = typeof(TWidgetViewModel);
-            TWidgetViewModel widgetView = _uiFactory.ShowUiView<TWidgetViewModel>(widgetModelType);
+            TWidgetViewModel widgetViewModel = _uiFactory.ShowWidgetView<TWidgetViewModel>(widgetModelType, root);
 
-            return 
+            widgetViewModel.transform.SetAsLastSibling();
+
+            return widgetViewModel;
         }
 
         public void Build(UISceneConfig config)

@@ -107,6 +107,24 @@ namespace WKosArch.Services.UIService
             return requestedPrefab != null;
         }
 
+
+        public bool TryGetWidgetPrefab<T>(Type typeViewModel, out T requestedPrefab) where T : WidgetViewModel
+        {
+            requestedPrefab = null;
+
+            foreach (var prefab in _widgetPrefabs)
+            {
+                if (prefab is T certainPrefab)
+                {
+                    requestedPrefab = certainPrefab;
+
+                    break;
+                }
+            }
+
+            return requestedPrefab != null;
+        }
+
         private int GetSceneIndexByName(string sceneName)
         {
             int sceneCount = SceneManager.sceneCountInBuildSettings;
