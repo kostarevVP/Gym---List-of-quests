@@ -360,7 +360,6 @@ GameObject:
   - component: {fileID: 300916163530902410}
   - component: {fileID: 3286673848367449489}
   - component: {fileID: 8380890461446885600}
-  - component: {fileID: 4735036481822790077}
   m_Layer: 5
   m_Name: WidgetQuestsList
   m_TagString: Untagged
@@ -458,21 +457,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionIn: {fileID: 0}
   _transitionOut: {fileID: 0}
---- !u!114 &4735036481822790077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540136449598653259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27832208c29305648aa3a29ad017f461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _manualRefreshing: 0
-  _manualSubscription: 0
-  IsPreCached: 0
 --- !u!1 &1753552794631289462
 GameObject:
   m_ObjectHideFlags: 0

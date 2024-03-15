@@ -57,7 +57,7 @@ namespace WKosArch.UIService.Views.Widgets
 
         public IWidget HideInstantly()
         {
-            if (ViewModel.IsPreCached)
+            if (ViewModel.IsSingleInstance)
             {
                 gameObject.SetActive(false);
                 Hidden?.Invoke(ViewModel);

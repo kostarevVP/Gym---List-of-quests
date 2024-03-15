@@ -97,7 +97,11 @@ namespace Assets._Game_.Services.UI_Service.Implementation
             {
                 if (!viewModel.gameObject.IsUnityNull())
                 {
-                    widgetViewModel = viewModel as TWidgetViewModel; 
+                    widgetViewModel = viewModel as TWidgetViewModel;
+                }
+                else
+                {
+                    widgetViewModel = CreateWidgetViewModel<TWidgetViewModel>(widgetModelType, root);
                 }
             }
             else
@@ -123,7 +127,10 @@ namespace Assets._Game_.Services.UI_Service.Implementation
                     prefabWidgetViewModel = Instantiate(prefab, root);
                     prefabWidgetViewModel.InjectDI(_diContainer);
 
-                    _createdWidgetViewModelsCache[typeViewModel] = prefabWidgetViewModel;
+                    if (prefabWidgetViewModel.IsSingleInstance)
+                    {
+                        _createdWidgetViewModelsCache[typeViewModel] = prefabWidgetViewModel;
+                    }
                 }
             }
 

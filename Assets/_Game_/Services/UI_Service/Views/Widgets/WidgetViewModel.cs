@@ -10,7 +10,7 @@ namespace WKosArch.UIService.Views.Widgets
         [Tooltip("If enabled you have to call Subscribe() and Unsubscribe methods manually. If not - it calls automatically from the OnEnable() and OnDisable() methods")]
         [SerializeField] private bool _manualSubscription;
 
-        public bool IsPreCached;
+        public bool IsSingleInstance;
 
         public IWidget Widget
         {

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using WKosArch.UIService.Views.Windows;
 
-public class WindowQuestWindowModel : Window<QuestWindowModel>
+public class WindowQuests : Window<QuestWindowModel>
 {
     [Space]
     [SerializeField]
