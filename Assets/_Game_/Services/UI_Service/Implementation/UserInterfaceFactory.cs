@@ -1,4 +1,4 @@
-﻿using Assets._Game_.Services.UI_Service.Views.UiView;
+using Assets._Game_.Services.UI_Service.Views.UiView;
 using Assets.LocalPackages.WKosArch.Scripts.Common.DIContainer;
 using System;
 using System.Collections.Generic;
