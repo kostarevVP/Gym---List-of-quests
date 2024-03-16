@@ -27,7 +27,7 @@ namespace Assets._Game_.Services.UI_Service.Views.UiView
             {
                 if (_userInterface == null)
                 {
-                    _userInterface = DIContainer.Resolve<IUserInterface>();
+                    _userInterface = DiContainer.Resolve<IUserInterface>();
                 }
 
                 return _userInterface;

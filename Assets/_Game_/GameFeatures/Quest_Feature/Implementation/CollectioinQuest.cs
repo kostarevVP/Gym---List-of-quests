@@ -1,6 +1,7 @@
 ﻿public class CollectioinQuest : ICollectionQuest 
 {
-    public bool IsDone => _isDone;
+    public bool IsComplete => _isDone;
+    public QuestState QuestState => _questState;
 
     public string Name => _name;
 
@@ -15,14 +16,14 @@
 
 
     private bool _isDone;
-    private int _currentAmount;
+    private QuestState _questState;
 
     private string _name;
     private string _descrition;
     private float _executionProgress;
     private string _stuffName;
     private int _amount;
-
+    private int _currentAmount;
 
     public CollectioinQuest(string name, string descrition, string stuffName, int amount)
     {

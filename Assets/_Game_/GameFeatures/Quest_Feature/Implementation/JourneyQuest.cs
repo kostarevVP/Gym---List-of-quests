@@ -1,6 +1,7 @@
 ﻿public class JourneyQuest : IJourneyQuest
 {
-    public bool IsDone => _isDone;
+    public bool IsComplete => _isDone;
+    public QuestState QuestState => _questState;
 
     public string Name => _name;
 
@@ -11,6 +12,7 @@
     public string PlaceArrival => _placeArrival;
 
     private bool _isDone;
+    private QuestState _questState;
 
     private string _name;
     private string _descrition;

@@ -10,7 +10,7 @@ public class QuitGameWindowModel : WindowViewModel
     {
         base.InjectDI(container);
 
-        _saveLoadService = DIContainer.Resolve<ISaveLoadService>();
+        _saveLoadService = DiContainer.Resolve<ISaveLoadService>();
     }
 
     internal void CloseAplication()

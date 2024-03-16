@@ -6,7 +6,7 @@ namespace WKosArch.Services.SoundService
     public class SoundService : ISoundService
     {
         public SoundManager SoundManager { get; private set; }
-        public List<ILoadProgress> ProgressReaders { get; } = new List<ILoadProgress>();
+        public List<ISavedProgress> ProgressReaders { get; } = new List<ISavedProgress>();
         public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
         public bool IsReady => _isReady;
 

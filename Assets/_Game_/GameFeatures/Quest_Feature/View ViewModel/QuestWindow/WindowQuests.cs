@@ -32,7 +32,7 @@ public class WindowQuests : Window<QuestWindowModel>
 
     public void OpenWidget()
     {
-        ViewModel.OpenWidget();
+        //ViewModel.OpenWidget();
         
     }
 

@@ -24,9 +24,7 @@ namespace WKosArch.Services.StaticDataServices
 
         public Dictionary<RenderingQuality, RenderPipelineAsset> RenderQualityConfigMap => _renderQualityConfigMap;
 
-        public List<ICollectionQuest> ColectionQuests => _collectingQuestList;
-        public List<IJourneyQuest> JourneyQuests => _journeyQuestList;
-
+        public List<IQuest> QuestsList => _questList;
 
         private IAssetProviderService _assetProviderService;
 
@@ -34,8 +32,7 @@ namespace WKosArch.Services.StaticDataServices
         private Dictionary<string, UISceneConfig> _sceneConfigsMap = new();
         private Dictionary<RenderingQuality, RenderPipelineAsset> _renderQualityConfigMap = new();
 
-        private List<ICollectionQuest> _collectingQuestList = new();
-        private List<IJourneyQuest> _journeyQuestList = new();
+        private List<IQuest> _questList = new();
 
 
 
@@ -91,7 +88,7 @@ namespace WKosArch.Services.StaticDataServices
                     config.StuffName,
                     config.Amount);
 
-                _collectingQuestList.Add(quest);
+                _questList.Add(quest);
             }
         }
 
@@ -106,7 +103,7 @@ namespace WKosArch.Services.StaticDataServices
                     config.Description,
                     config.PlaceArrival);
 
-                _journeyQuestList.Add(quest);
+                _questList.Add(quest);
             }
         }
 
@@ -124,8 +121,7 @@ namespace WKosArch.Services.StaticDataServices
             _sceneConfigsMap.Clear();
             _renderQualityConfigMap.Clear();
 
-            _collectingQuestList.Clear();
-            _journeyQuestList.Clear();
+            _questList.Clear();
         }
     }
 }

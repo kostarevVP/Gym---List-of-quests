@@ -7,7 +7,7 @@ namespace WKosArch.UIService.Views
     {
         public IView View { get; private set; }
         public bool IsActive => View.IsActive;
-        public IDIContainer DIContainer => _dIContainer;
+        public IDIContainer DiContainer => _dIContainer;
         
         private IDIContainer _dIContainer;
 

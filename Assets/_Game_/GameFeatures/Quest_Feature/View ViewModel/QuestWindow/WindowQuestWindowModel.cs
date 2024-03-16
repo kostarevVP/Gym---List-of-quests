@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using WKosArch.UIService.Views.Windows;
 
@@ -7,6 +9,11 @@ public class WindowQuestWindowModel : Window<QuestWindowModel>
     [Space]
     [SerializeField]
     private Button _activeQuestsButton;
+    [SerializeField]
+    private Button _disactiveQuestsButton;
+    [SerializeField]
+    private Button _newQuestsButton;
+    [Space]
     [SerializeField]
     private Transform _widgetRoot;
 
@@ -20,21 +27,11 @@ public class WindowQuestWindowModel : Window<QuestWindowModel>
     public override void Subscribe()
     {
         base.Subscribe();
-        _activeQuestsButton.onClick.AddListener(OpenWidget);
+        _activeQuestsButton.onClick.AddListener(() => ViewModel.OpenWidget(QuestState.Active));
+        _disactiveQuestsButton.onClick.AddListener(() => ViewModel.OpenWidget(QuestState.Disactive));
+        _newQuestsButton.onClick.AddListener(() => ViewModel.OpenWidget(QuestState.New));
     }
 
-
-    public override void Unsubscribe()
-    {
-        base.Unsubscribe();
-        _activeQuestsButton.onClick.RemoveListener(OpenWidget);
-    }
-
-    public void OpenWidget()
-    {
-        ViewModel.OpenWidget();
-        
-    }
 
     private void SetData()
     {

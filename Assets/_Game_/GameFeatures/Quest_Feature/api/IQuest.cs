@@ -1,8 +1,11 @@
+using System;
+
 public interface IQuest
 {
+    public QuestState QuestState { get; }
+    bool IsComplete { get; }
     string Name { get; }
     string Description { get; }
-    bool IsDone { get; }
     float ExecutionProgress { get; }
 }
 
@@ -16,4 +19,13 @@ public interface ICollectionQuest : IQuest
 public interface IJourneyQuest : IQuest
 {
     string PlaceArrival { get; }
+}
+
+[Serializable]
+public enum QuestState
+{
+    Unknown = 0,
+    New = 1,
+    Active = 2,
+    Disactive = 3,
 }

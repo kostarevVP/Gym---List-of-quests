@@ -1,44 +1,115 @@
+using Assets.Game.Services.ProgressService.api;
 using System.Collections.Generic;
 using WKosArch.Extentions;
-using WKosArch.Services.StaticDataServices;
 
-public class QuestFeature : IQuestFeature
+public class QuestFeature : IQuestFeature, ISavedProgress
 {
     public bool IsReady => _isReady;
-    public List<ICollectionQuest> CollectionQuests => _collectingQuests;
-    public List<IJourneyQuest> JourneyQuests => _journeyQuests;
+
 
 
     private bool _isReady;
 
-    private IStaticDataService _staticDataService;
 
-    private List<ICollectionQuest> _collectingQuests;
-    private List<IJourneyQuest> _journeyQuests;
+    private List<ICollectionQuest> _activeCollectingQuests;
+    private List<ICollectionQuest> _disactiveCollectingQuests;
+    private List<ICollectionQuest> _newCollectingQuests;
 
-    public QuestFeature(IStaticDataService staticDataService)
+
+    private List<IJourneyQuest> _activeJourneyQuests;
+    private List<IJourneyQuest> _disactiveJourneyQuests;
+    private List<IJourneyQuest> _newJourneyQuests;
+
+
+    private List<IQuest> _quests;
+
+    public QuestFeature(List<IQuest> quests)
     {
-        _staticDataService = staticDataService;
-
-        Init();
+        _quests = quests;
+        PrintLog();
+        SeparateData();
+        _isReady = true;
     }
 
 
-    private void Init()
+    public void SaveProgress(GameProgress progress)
     {
-        _collectingQuests = _staticDataService.ColectionQuests;
-        _journeyQuests = _staticDataService.JourneyQuests;
+        CombaineData();
+        progress.Quests = _quests;
     }
+
+
+    public void LoadProgress(GameProgress progress)
+    {
+        _quests = progress.Quests;
+        SeparateData();
+    }
+
+    private void CombaineData()
+    {
+        if (_quests.Count == 0)
+        {
+            AddToQuestsList(_newCollectingQuests);
+            AddToQuestsList(_activeCollectingQuests);
+            AddToQuestsList(_disactiveCollectingQuests);
+            AddToQuestsList(_newJourneyQuests);
+            AddToQuestsList(_activeJourneyQuests);
+            AddToQuestsList(_disactiveJourneyQuests); 
+        }
+    }
+
+    private void AddToQuestsList<T>(List<T> quests) where T : IQuest
+    {
+        foreach (var quest in quests)
+        {
+            _quests.Add(quest);
+        }
+    }
+
+    private void SeparateData()
+    {
+        foreach (var quest in _quests)
+        {
+            if (quest is ICollectionQuest)
+            {
+                switch (quest.QuestState)
+                {
+                    case QuestState.New:
+                        _newCollectingQuests.Add(quest as ICollectionQuest);
+                        break;
+                    case QuestState.Active:
+                        _activeCollectingQuests.Add(quest as ICollectionQuest);
+                        break;
+                    case QuestState.Disactive:
+                        _disactiveCollectingQuests.Add(quest as ICollectionQuest);
+                        break;
+                }
+            }
+            if (quest is IJourneyQuest)
+            {
+                switch (quest.QuestState)
+                {
+                    case QuestState.New:
+                        _newJourneyQuests.Add(quest as IJourneyQuest);
+                        break;
+                    case QuestState.Active:
+                        _activeJourneyQuests.Add(quest as IJourneyQuest);
+                        break;
+                    case QuestState.Disactive:
+                        _disactiveJourneyQuests.Add(quest as IJourneyQuest);
+                        break;
+                }
+            }
+        }
+
+        _quests.Clear();
+    }
+
 
 
     private void PrintLog()
     {
-        foreach (var quest in _collectingQuests)
-        {
-            Log.PrintYellow(quest.ToString());
-        }
-
-        foreach (var quest in _journeyQuests)
+        foreach (var quest in _quests)
         {
             Log.PrintYellow(quest.ToString());
         }

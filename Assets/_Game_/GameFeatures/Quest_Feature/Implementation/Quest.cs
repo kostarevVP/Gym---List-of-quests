@@ -1,6 +1,6 @@
 public abstract class Quest : IQuest
 {
-    public bool IsDone => _isDone;
+    public bool IsComplete => _isDone;
 
     public string Name => _name;
 
@@ -8,10 +8,13 @@ public abstract class Quest : IQuest
 
     public float ExecutionProgress => _executionProgress;
 
+    public QuestState QuestState => _questState;
+
     private bool _isDone;
     private string _name;
     private string _descrition;
     private float _executionProgress;
+    private QuestState _questState;
 
     public Quest(string name, string descrition)
     {
