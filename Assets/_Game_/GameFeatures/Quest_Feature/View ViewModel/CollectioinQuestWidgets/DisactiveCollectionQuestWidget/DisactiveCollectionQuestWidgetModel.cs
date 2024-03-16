@@ -5,7 +5,7 @@ public class DisactiveCollectionQuestWidgetModel : WidgetViewModel
 
 }
 
-public class WidgetDisactiveCollectionQuestWidgetModel : Widget<DisactiveCollectionQuestWidgetModel>
+public class WidgetDisactiveCollectionQuest : Widget<DisactiveCollectionQuestWidgetModel>
 {
     
 }

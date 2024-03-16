@@ -2,23 +2,24 @@ using System;
 
 public interface IQuest
 {
-    public QuestState QuestState { get; }
-    bool IsComplete { get; }
-    string Name { get; }
-    string Description { get; }
-    float ExecutionProgress { get; }
+    public QuestState State { get; set; }
+    bool IsComplete { get; set; }
+    string Name { get; set; }
+    string Description { get; set; }
 }
 
 public interface ICollectionQuest : IQuest
 {
-    string StuffName { get; }   
-    int Amount { get; }
-    int CurrentAmount { get; }
+    string StuffName { get; set; }
+    int Amount { get; set; }
+    int CurrentAmount { get; set; }
+    float ExecutionProgress { get; set; }
+
 }
 
 public interface IJourneyQuest : IQuest
 {
-    string PlaceArrival { get; }
+    string PlaceArrival { get; set; }
 }
 
 [Serializable]

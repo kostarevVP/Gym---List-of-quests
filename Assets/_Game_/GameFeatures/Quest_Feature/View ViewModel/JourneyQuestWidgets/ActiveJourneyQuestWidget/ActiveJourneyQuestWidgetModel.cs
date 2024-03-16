@@ -5,7 +5,7 @@ public class ActiveJourneyQuestWidgetModel : WidgetViewModel
 
 }
 
-public class WidgetActiveJourneyQuestWidgetModel : Widget<ActiveJourneyQuestWidgetModel>
+public class WidgetActiveJourneyQuest : Widget<ActiveJourneyQuestWidgetModel>
 {
     
 }

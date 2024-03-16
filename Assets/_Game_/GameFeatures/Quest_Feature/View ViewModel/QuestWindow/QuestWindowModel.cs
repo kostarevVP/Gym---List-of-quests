@@ -1,13 +1,25 @@
-using Cysharp.Threading.Tasks.Triggers;
 using UnityEngine;
+using UnityEngine.UI;
 using WKosArch.UIService.Views.Windows;
 
 public class QuestWindowModel : WindowViewModel
 {
-    public Transform WidgetRoot { get; set; }
+    [Space]
+    [SerializeField]
+    private Transform _widgetRoot;
+    [SerializeField]
+    private ScrollRect _scrollRect;
 
-    internal void OpenWidget(QuestState quastState)
+    private QuestsListWidgetModel _activeVidget;
+
+    internal async void OpenWidget(QuestState questState)
     {
-        UI.ShowWidget<QuestsListWidgetModel>(WidgetRoot).InitState(quastState);
+        if(_activeVidget != null)
+        {
+            await _activeVidget.Widget.Hide();
+        }
+        _activeVidget = UI.ShowWidget<QuestsListWidgetModel>(_widgetRoot);
+        _scrollRect.content = _activeVidget.GetComponent<RectTransform>();
+        _activeVidget.InitState(questState);
     }
 }

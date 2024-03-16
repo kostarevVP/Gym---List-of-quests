@@ -4,15 +4,33 @@ using WKosArch.UIService.Views.Widgets;
 
 public class QuestsListWidgetModel : WidgetViewModel
 {
+    private IQuestFeature _questFeature => DiContainer.Resolve<IQuestFeature>();
     protected override void AwakeInternal()
     {
         base.AwakeInternal();
-        Log.PrintYellow("QuestsListWidgetModel AwakeInternal");
-
     }
 
     internal void InitState(QuestState quastState)
     {
-        Log.PrintYellow("QuestsListWidgetModel InitState");
+
+    }
+
+    private void InitDisactiveState(IQuest quest)
+    {
+        Log.PrintYellow($"InitDisactiveState={_questFeature.Quests.Count}");
+
+    }
+
+    private void InitActiveState(IQuest quest)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void InitNewState(IQuest quest)
+    {
+        if (quest is ICollectionQuest)
+        {
+            //UI.ShowWidget<WidgetDisactiveCollectionQuest>
+        }
     }
 }

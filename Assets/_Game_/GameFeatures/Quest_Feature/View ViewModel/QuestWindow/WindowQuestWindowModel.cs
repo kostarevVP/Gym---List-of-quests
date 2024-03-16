@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using WKosArch.UIService.Views.Windows;
 
@@ -13,15 +11,12 @@ public class WindowQuestWindowModel : Window<QuestWindowModel>
     private Button _disactiveQuestsButton;
     [SerializeField]
     private Button _newQuestsButton;
-    [Space]
-    [SerializeField]
-    private Transform _widgetRoot;
+
 
 
     protected override void AwakeInternal()
     {
         base.AwakeInternal();
-        SetData();
     }
 
     public override void Subscribe()
@@ -30,12 +25,6 @@ public class WindowQuestWindowModel : Window<QuestWindowModel>
         _activeQuestsButton.onClick.AddListener(() => ViewModel.OpenWidget(QuestState.Active));
         _disactiveQuestsButton.onClick.AddListener(() => ViewModel.OpenWidget(QuestState.Disactive));
         _newQuestsButton.onClick.AddListener(() => ViewModel.OpenWidget(QuestState.New));
-    }
-
-
-    private void SetData()
-    {
-        ViewModel.WidgetRoot = _widgetRoot;
     }
 
 }

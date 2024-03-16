@@ -103,6 +103,8 @@ namespace WKosArch.Services.StaticDataServices
                     config.Description,
                     config.PlaceArrival);
 
+                quest.State = QuestState.New;
+
                 _questList.Add(quest);
             }
         }

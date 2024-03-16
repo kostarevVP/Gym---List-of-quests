@@ -1,5 +1,6 @@
 ﻿using Assets._Game_.Services.UI_Service.Views.UiView;
 using UnityEngine;
+using WKosArch.Services.UIService.UI;
 
 namespace WKosArch.UIService.Views.Widgets
 {
@@ -25,34 +26,20 @@ namespace WKosArch.UIService.Views.Widgets
             }
         }
 
+        public IUserInterface UI
+        {
+            get
+            {
+                if (_userInterface == null)
+                {
+                    _userInterface = DiContainer.Resolve<IUserInterface>();
+                }
+
+                return _userInterface;
+            }
+        }
+
         private IWidget _widget;
-
-        private void OnEnable()
-        {
-            if (!_manualRefreshing)
-            {
-                Refresh();
-            }
-
-            if (!_manualSubscription)
-            {
-                Subscribe();
-            }
-
-            OnEnableInternal();
-        }
-
-        private void OnDisable()
-        {
-            if (!_manualSubscription)
-            {
-                Unsubscribe();
-            }
-
-            OnDisableInternal();
-        }
-
-        protected virtual void OnEnableInternal() { }
-        protected virtual void OnDisableInternal() { }
+        private IUserInterface _userInterface;
     }
 }

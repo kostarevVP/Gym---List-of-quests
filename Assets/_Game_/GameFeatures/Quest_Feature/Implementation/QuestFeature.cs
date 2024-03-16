@@ -6,6 +6,7 @@ public class QuestFeature : IQuestFeature, ISavedProgress
 {
     public bool IsReady => _isReady;
 
+    public List<IQuest> Quests => _quests;
 
 
     private bool _isReady;
@@ -26,8 +27,7 @@ public class QuestFeature : IQuestFeature, ISavedProgress
     public QuestFeature(List<IQuest> quests)
     {
         _quests = quests;
-        PrintLog();
-        SeparateData();
+
         _isReady = true;
     }
 
@@ -72,7 +72,7 @@ public class QuestFeature : IQuestFeature, ISavedProgress
         {
             if (quest is ICollectionQuest)
             {
-                switch (quest.QuestState)
+                switch (quest.State)
                 {
                     case QuestState.New:
                         _newCollectingQuests.Add(quest as ICollectionQuest);
@@ -87,7 +87,7 @@ public class QuestFeature : IQuestFeature, ISavedProgress
             }
             if (quest is IJourneyQuest)
             {
-                switch (quest.QuestState)
+                switch (quest.State)
                 {
                     case QuestState.New:
                         _newJourneyQuests.Add(quest as IJourneyQuest);

@@ -1,24 +1,17 @@
 public abstract class Quest : IQuest
 {
-    public bool IsComplete => _isDone;
+    public bool IsComplete { get => _isDone; set => value = _isDone; }
 
-    public string Name => _name;
+    public QuestState State { get => _questSate; set => value = _questSate; }
 
-    public string Description => _descrition;
+    public string Name { get => _name; set => value = _name; }
 
-    public float ExecutionProgress => _executionProgress;
+    public string Description { get => _descrition; set => value = _descrition; }
 
-    public QuestState QuestState => _questState;
 
     private bool _isDone;
+    private QuestState _questSate;
     private string _name;
     private string _descrition;
-    private float _executionProgress;
-    private QuestState _questState;
 
-    public Quest(string name, string descrition)
-    {
-        _name = name;
-        _descrition = descrition;
-    }
 }

@@ -5,7 +5,7 @@ public class NewCollectionQuestWidgetModel : WidgetViewModel
 
 }
 
-public class WidgetNewCollectionQuestWidgetModel : Widget<NewCollectionQuestWidgetModel>
+public class WidgetNewCollectionQuest : Widget<NewCollectionQuestWidgetModel>
 {
     
 }

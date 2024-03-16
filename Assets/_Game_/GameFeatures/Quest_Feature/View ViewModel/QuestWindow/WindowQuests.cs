@@ -14,7 +14,6 @@ public class WindowQuests : Window<QuestWindowModel>
     protected override void AwakeInternal()
     {
         base.AwakeInternal();
-        SetData();
     }
 
     public override void Subscribe()
@@ -35,10 +34,4 @@ public class WindowQuests : Window<QuestWindowModel>
         //ViewModel.OpenWidget();
         
     }
-
-    private void SetData()
-    {
-        ViewModel.WidgetRoot = _widgetRoot;
-    }
-
 }
