@@ -1,13 +1,31 @@
 ﻿public class CollectioinQuest : Quest, ICollectionQuest 
 {
-    public float ExecutionProgress { get => _executionProgress; set => value = _executionProgress; }
-
+    public float ExecutionProgress { get => _amount / _currentAmount; } 
     public string StuffName { get => _stuffName; set => value = _stuffName; }
 
-    public int Amount { get => _amount; set => value = _amount; }
-    public int CurrentAmount { get => _currentAmount; set => value = _currentAmount; }
+    public int Amount
+    {
+        get => _amount; set
+        {
+            if (_amount != value)
+            {
+                value = _amount;
+                OnDataChanged?.Invoke(); 
+            }
+        }
+    }
+    public int CurrentAmount
+    {
+        get => _currentAmount; set
+        {
+            if (_currentAmount != value)
+            {
+                value = _currentAmount;
+                OnDataChanged?.Invoke(); 
+            }
+        }
+    }
 
-    private float _executionProgress;
     private string _stuffName;
     private int _amount;
     private int _currentAmount;

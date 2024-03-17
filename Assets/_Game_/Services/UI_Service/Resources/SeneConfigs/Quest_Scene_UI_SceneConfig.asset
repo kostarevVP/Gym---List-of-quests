@@ -24,6 +24,11 @@ MonoBehaviour:
   - {fileID: 7284210044280521407, guid: 4711c9a59994a9b4eb226211f7dc6e3e, type: 3}
   _widgetPrefabs:
   - {fileID: 5230879307879126971, guid: 58eacc84235e67a40914ba8febf95e25, type: 3}
+  - {fileID: 3800372551179852858, guid: fbe1824e199e29541966c3e69d30d844, type: 3}
+  - {fileID: 4233058957554677067, guid: 2ecd8d56c051f99478459cfcd4eb0da8, type: 3}
+  - {fileID: 4738017266999169295, guid: 67d7c1c4edd54ef4a882977f40369094, type: 3}
+  - {fileID: 5475872103957148259, guid: 6888f83ca82f9ff4a81a9edd3cf099ff, type: 3}
+  - {fileID: 6398327245018464871, guid: f7454c86afc183b469029ac5b0227a22, type: 3}
   SceneName:
   - Quest_Scene
   SceneIndex: 01000000

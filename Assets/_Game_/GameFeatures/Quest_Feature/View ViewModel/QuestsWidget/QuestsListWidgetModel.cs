@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using WKosArch.Extentions;
 using WKosArch.UIService.Views.Widgets;
 
@@ -12,25 +13,7 @@ public class QuestsListWidgetModel : WidgetViewModel
 
     internal void InitState(QuestState quastState)
     {
-
+        var questBaseWidget = UI.ShowWidget<QuestBaseWidgetModel>(this.GetComponent<RectTransform>());
     }
 
-    private void InitDisactiveState(IQuest quest)
-    {
-        Log.PrintYellow($"InitDisactiveState={_questFeature.Quests.Count}");
-
-    }
-
-    private void InitActiveState(IQuest quest)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void InitNewState(IQuest quest)
-    {
-        if (quest is ICollectionQuest)
-        {
-            //UI.ShowWidget<WidgetDisactiveCollectionQuest>
-        }
-    }
 }
