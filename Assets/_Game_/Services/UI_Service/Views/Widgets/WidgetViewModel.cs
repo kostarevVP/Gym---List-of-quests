@@ -1,5 +1,4 @@
-﻿using Assets._Game_.Services.UI_Service.Views.UiView;
-using UnityEngine;
+﻿using UnityEngine;
 using WKosArch.Services.UIService.UI;
 
 namespace WKosArch.UIService.Views.Widgets
@@ -41,5 +40,11 @@ namespace WKosArch.UIService.Views.Widgets
 
         private IWidget _widget;
         private IUserInterface _userInterface;
+
+
+        private void OnDisable()
+        {
+            Unsubscribe();
+        }
     }
 }

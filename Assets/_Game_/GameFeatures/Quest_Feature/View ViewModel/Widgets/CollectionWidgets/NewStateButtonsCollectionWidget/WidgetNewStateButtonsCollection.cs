@@ -1,6 +1,8 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WKosArch.Extentions;
 using WKosArch.UIService.Views.Widgets;
 
 public class WidgetNewStateButtonsCollection : Widget<NewStateButtonsCollectionWidgetModel>
@@ -21,6 +23,13 @@ public class WidgetNewStateButtonsCollection : Widget<NewStateButtonsCollectionW
     public override void Subscribe()
     {
         base.Subscribe();
-        _activateButton.onClick.AddListener(() => ViewModel.ChangeState(QuestState.Active));
+        Log.PrintYellow($"WidgetNewStateButtonsCollection Subscribe");
+        _activateButton.onClick.AddListener(ChangeState);
+    }
+
+    private void ChangeState()
+    {
+        Log.PrintYellow($"WidgetNewStateButtonsCollection ChangeState");
+        ViewModel.ChangeState(QuestState.Active);
     }
 }

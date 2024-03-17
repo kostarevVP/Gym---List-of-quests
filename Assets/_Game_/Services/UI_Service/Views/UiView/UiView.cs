@@ -76,14 +76,14 @@ namespace Assets._Game_.Services.UI_Service.Views.UiView
             Destroyed?.Invoke(ViewModel);
         }
 
-        public override void Subscribe()
-        {
-            base.Subscribe();
-        }
+        //public override void Subscribe()
+        //{
+        //    base.Subscribe();
+        //}
 
-        public override void Unsubscribe()
-        {
-            base.Unsubscribe();
-        }
+        //public override void Unsubscribe()
+        //{
+        //    base.Unsubscribe();
+        //}
     }
 }

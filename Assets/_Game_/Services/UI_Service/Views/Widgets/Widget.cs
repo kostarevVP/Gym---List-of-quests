@@ -75,14 +75,6 @@ namespace WKosArch.UIService.Views.Widgets
             Destroyed?.Invoke(ViewModel);
         }
 
-        public override void Subscribe()
-        {
-            base.Subscribe();
-        }
-
-        public override void Unsubscribe()
-        {
-            base.Unsubscribe();
-        }
+       
     }
 }

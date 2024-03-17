@@ -9,6 +9,7 @@ public class SliderWidgetModel : WidgetViewModel
     public void Construct(ICollectionQuest quest)
     {
         _quest = quest;
+        ExecutionProgress = _quest.ExecutionProgress;
     }
 
     protected override void SubscribeInternal()
