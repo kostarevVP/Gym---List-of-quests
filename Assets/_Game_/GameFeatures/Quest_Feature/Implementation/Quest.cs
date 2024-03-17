@@ -24,15 +24,15 @@ public abstract class Quest : IQuest
         {
             if (_questSate != value)
             {
-                value = _questSate;
+                _questSate = value;
                 OnDataChanged?.Invoke();
             }
         }
     }
 
-    public string Name { get => _name; set => value = _name; }
+    public string Name { get => _name; set => _name = value; }
 
-    public string Description { get => _descrition; set => value = _descrition; }
+    public string Description { get => _descrition; set => _descrition = value; }
 
     private bool _isDone;
     private QuestState _questSate;

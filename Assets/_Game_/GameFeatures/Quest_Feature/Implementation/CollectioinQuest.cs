@@ -1,7 +1,7 @@
 ﻿public class CollectioinQuest : Quest, ICollectionQuest 
 {
     public float ExecutionProgress { get => _amount / _currentAmount; } 
-    public string StuffName { get => _stuffName; set => value = _stuffName; }
+    public string StuffName { get => _stuffName; set => _stuffName = value; }
 
     public int Amount
     {
@@ -9,7 +9,7 @@
         {
             if (_amount != value)
             {
-                value = _amount;
+                _amount = value;
                 OnDataChanged?.Invoke(); 
             }
         }
@@ -20,7 +20,7 @@
         {
             if (_currentAmount != value)
             {
-                value = _currentAmount;
+                _currentAmount = value;
                 OnDataChanged?.Invoke(); 
             }
         }
@@ -30,13 +30,7 @@
     private int _amount;
     private int _currentAmount;
 
-    public CollectioinQuest(string name, string descrition, string stuffName, int amount)
-    {
-        Name = name;
-        Description = descrition;
-        StuffName = stuffName;
-        Amount = amount;
-    }
+
 
     public override string ToString()
     {

@@ -29,6 +29,10 @@ MonoBehaviour:
   - {fileID: 4738017266999169295, guid: 67d7c1c4edd54ef4a882977f40369094, type: 3}
   - {fileID: 5475872103957148259, guid: 6888f83ca82f9ff4a81a9edd3cf099ff, type: 3}
   - {fileID: 6398327245018464871, guid: f7454c86afc183b469029ac5b0227a22, type: 3}
+  - {fileID: 6981373388751885809, guid: 6857b9c0161281449ad20b683d417f08, type: 3}
+  - {fileID: 8016690077172017031, guid: 5c3dd11ddef8f1242a4dc1a040ffe6d0, type: 3}
+  - {fileID: 6483907254112274420, guid: 74cd46670d4765048ae1d273428521f6, type: 3}
+  - {fileID: 1064096034875164688, guid: 540255744a692604bad0a7ee2d330dcf, type: 3}
   SceneName:
   - Quest_Scene
   SceneIndex: 01000000

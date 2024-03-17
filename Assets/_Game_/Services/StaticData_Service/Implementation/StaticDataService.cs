@@ -82,11 +82,14 @@ namespace WKosArch.Services.StaticDataServices
 
             foreach (var config in questConfigs)
             {
-                ICollectionQuest quest = new CollectioinQuest(
-                    config.Name,
-                    config.Description,
-                    config.StuffName,
-                    config.Amount);
+                ICollectionQuest quest = new CollectioinQuest();
+
+                quest.State = QuestState.New;
+
+                quest.Name = config.Name;
+                quest.Description = config.Description;
+                quest.StuffName = config.StuffName;
+                quest.Amount = config.Amount;
 
                 _questList.Add(quest);
             }
@@ -98,12 +101,13 @@ namespace WKosArch.Services.StaticDataServices
 
             foreach (var config in questConfigs)
             {
-                IJourneyQuest quest = new JourneyQuest(
-                    config.Name,
-                    config.Description,
-                    config.PlaceArrival);
+                IJourneyQuest quest = new JourneyQuest();
 
                 quest.State = QuestState.New;
+
+                quest.Name = config.Name;
+                quest.Description = config.Description;
+                quest.PlaceArrival = config.PlaceArrival;
 
                 _questList.Add(quest);
             }
