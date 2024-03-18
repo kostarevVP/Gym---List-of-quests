@@ -126,7 +126,6 @@ namespace Assets._Game_.Services.UI_Service.Implementation
                 {
                     prefabWidgetViewModel = Instantiate(prefab, root);
                     prefabWidgetViewModel.InjectDI(_diContainer);
-                    prefabWidgetViewModel.Subscribe();
 
                     if (prefabWidgetViewModel.IsSingleInstance)
                     {

@@ -459,9 +459,9 @@ GameObject:
   - component: {fileID: 4366018618953596083}
   - component: {fileID: 686346750491781136}
   - component: {fileID: 3056258022959840864}
-  - component: {fileID: 1363592782827880652}
   - component: {fileID: 3800372551179852858}
   - component: {fileID: 5081794895648188916}
+  - component: {fileID: 6611549922847785312}
   m_Layer: 5
   m_Name: QuestBaseWidget
   m_TagString: Untagged
@@ -554,20 +554,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1363592782827880652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8861172076739512115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!114 &3800372551179852858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,3 +585,17 @@ MonoBehaviour:
   _transitionOut: {fileID: 0}
   TitleTMProUGUI: {fileID: 6473869088131262044}
   DescriptionTMProUGUI: {fileID: 8561786650413429550}
+--- !u!114 &6611549922847785312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861172076739512115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2

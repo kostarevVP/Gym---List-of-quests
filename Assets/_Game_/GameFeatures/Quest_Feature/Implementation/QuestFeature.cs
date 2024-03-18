@@ -35,13 +35,13 @@ public class QuestFeature : IQuestFeature, ISavedProgress
     public void SaveProgress(GameProgress progress)
     {
         //CombaineData();
-        //progress.Quests = _quests;
+        progress.Quests = _quests;
     }
 
 
     public void LoadProgress(GameProgress progress)
     {
-        //_quests = progress.Quests;
+        _quests = progress.Quests;
         //SeparateData();
     }
 

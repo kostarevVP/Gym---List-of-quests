@@ -1,3 +1,4 @@
+using WKosArch.Extentions;
 using WKosArch.UIService.Views.Widgets;
 
 public class SliderWidgetModel : WidgetViewModel
@@ -10,13 +11,11 @@ public class SliderWidgetModel : WidgetViewModel
     {
         _quest = quest;
         ExecutionProgress = _quest.ExecutionProgress;
+
+        _quest.OnDataChanged += ChageValue;
+        Refresh();
     }
 
-    protected override void SubscribeInternal()
-    {
-        base.SubscribeInternal();
-        _quest.OnDataChanged += ChageValue;
-    }
 
     protected override void UnsubscribeInternal()
     {
@@ -29,7 +28,7 @@ public class SliderWidgetModel : WidgetViewModel
         if (_quest.ExecutionProgress != ExecutionProgress)
         {
             ExecutionProgress = _quest.ExecutionProgress;
-            View.Refresh();
+            Refresh();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿public class CollectioinQuest : Quest, ICollectionQuest 
 {
-    public float ExecutionProgress { get => _amount / _currentAmount; } 
+    public float ExecutionProgress { get => (float)_currentAmount / _amount; } 
     public string StuffName { get => _stuffName; set => _stuffName = value; }
 
     public int Amount

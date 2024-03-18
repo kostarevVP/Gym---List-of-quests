@@ -8,6 +8,11 @@ public class QuestsListWidgetModel : WidgetViewModel
 
     internal void InitState(QuestState questState)
     {
+        if(questState == QuestState.New)
+        {
+             UI.ShowWidget<RandomQuestWidgetModel>(this.transform);
+        }
+
         foreach(var quest in  _questFeature.Quests)
         {
             if(quest.State == questState)

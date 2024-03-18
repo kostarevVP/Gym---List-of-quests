@@ -342,9 +342,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8529483647116408869}
   - component: {fileID: 3623776159143621156}
-  - component: {fileID: 1699993728491648205}
   - component: {fileID: 6981373388751885809}
   - component: {fileID: 2012310107500388941}
+  - component: {fileID: -3192927970050111424}
   m_Layer: 5
   m_Name: ActiveStateButtonsJourneyWidget
   m_TagString: Untagged
@@ -399,20 +399,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1699993728491648205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235650737314909748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!114 &6981373388751885809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +430,20 @@ MonoBehaviour:
   _transitionOut: {fileID: 0}
   _endQuestButton: {fileID: 7644145157231284066}
   _cancelQuestButton: {fileID: 6879092982426040276}
+--- !u!114 &-3192927970050111424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235650737314909748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &8354711178722898933
 GameObject:
   m_ObjectHideFlags: 0

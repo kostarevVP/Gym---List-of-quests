@@ -342,9 +342,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6889134554390492579}
   - component: {fileID: 1438307905991427297}
-  - component: {fileID: 82801293782723516}
   - component: {fileID: 4233058957554677067}
   - component: {fileID: 475134486854159976}
+  - component: {fileID: 5027622115012829737}
   m_Layer: 5
   m_Name: ActiveStateButtonsCollectionWidget
   m_TagString: Untagged
@@ -373,7 +373,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 400, y: 0}
-  m_SizeDelta: {x: 740, y: 0}
+  m_SizeDelta: {x: 740, y: 73.1045}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1438307905991427297
 MonoBehaviour:
@@ -401,20 +401,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &82801293782723516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4514070207961117302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!114 &4233058957554677067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +434,20 @@ MonoBehaviour:
   _plusButton: {fileID: 1027964839471608830}
   _amountTMPro: {fileID: 7829569463614968994}
   _cancelButton: {fileID: 8184094876374910610}
+--- !u!114 &5027622115012829737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514070207961117302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &5452875769928574804
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,10 +784,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 52.55
   m_fontSizeBase: 45
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

@@ -13,20 +13,28 @@ public class DisactiveStateButtonsCollectionWidgetModel : WidgetViewModel
 
         Amount = _quest.Amount;
         CurrentAmount = _quest.CurrentAmount;
+        Refresh();
     }
 
 
     internal void ChangeState(QuestState state)
     {
-        if(state == QuestState.New)
+        if (state == QuestState.New)
         {
             _quest.State = QuestState.New;
             _quest.IsComplete = false;
             _quest.CurrentAmount = 0;
         }
-        if(state == QuestState.Active)
+        if (state == QuestState.Active)
         {
             _quest.State = state;
+
+            if (_quest.IsComplete)
+            {
+                _quest.IsComplete = false;
+                _quest.CurrentAmount = 0;
+            }
         }
+        Refresh();
     }
 }

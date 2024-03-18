@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5929,6 +5929,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RandomQuestWidget
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510011186017945757, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510011186017945757, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510011186017945757, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 73.1045
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510011186017945757, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 474.70706
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510011186017945757, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -36.55225
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787082223153838869, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787082223153838869, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787082223153838869, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 73.1045
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787082223153838869, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 202.21402
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787082223153838869, guid: 540255744a692604bad0a7ee2d330dcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -36.55225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -2,8 +2,8 @@ using WKosArch.UIService.Views.Widgets;
 
 public class ActiveButtonsCollectionWidgetModel : WidgetViewModel
 {
-    public int Amount { get; private set; }
     public int CurrentAmount { get; private set; }
+    public int Amount { get; private set; }
 
     private ICollectionQuest _quest;
 
@@ -11,15 +11,13 @@ public class ActiveButtonsCollectionWidgetModel : WidgetViewModel
     {
         _quest = quest;
 
-        Amount = _quest.Amount;
         CurrentAmount = _quest.CurrentAmount;
+        Amount = _quest.Amount;
+
+        _quest.OnDataChanged += ChageValue;
+        Refresh();
     }
 
-    protected override void SubscribeInternal()
-    {
-        base.SubscribeInternal();
-        _quest.OnDataChanged += ChageValue;
-    }
 
     protected override void UnsubscribeInternal()
     {
@@ -41,7 +39,7 @@ public class ActiveButtonsCollectionWidgetModel : WidgetViewModel
         }
     }
 
-    internal void ChangeCurrentAmoutn(int value)
+    internal void ChangeCurrentAmount(int value)
     {
         var currentAmount = CurrentAmount;
 

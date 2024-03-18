@@ -32,7 +32,7 @@ public class WidgetActiveButtonsCollection   : Widget<ActiveButtonsCollectionWid
 
     private void ChangeCurrentAmount(int value)
     {
-        ViewModel.ChangeCurrentAmoutn(value);
+        ViewModel.ChangeCurrentAmount(value);
     }
 
     private void CancelQuest()

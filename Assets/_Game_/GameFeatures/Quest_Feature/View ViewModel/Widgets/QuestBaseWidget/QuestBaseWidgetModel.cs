@@ -1,4 +1,4 @@
-using WKosArch.Extentions;
+using System;
 using WKosArch.UIService.Views.Widgets;
 
 public class QuestBaseWidgetModel : WidgetViewModel
@@ -7,6 +7,7 @@ public class QuestBaseWidgetModel : WidgetViewModel
     public string Description { get; private set; }
 
     private IQuest _quest;
+    private QuestState _currentState;
 
     public void Construct(IQuest quest)
     {
@@ -14,8 +15,31 @@ public class QuestBaseWidgetModel : WidgetViewModel
 
         Title = _quest.Name;
         Description = _quest.Description;
-        Refresh();
+        _currentState = _quest.State;
 
+        Refresh();
+        AddSubWidgets();
+
+        _quest.OnDataChanged += DataChanged;
+    }
+
+    protected override void UnsubscribeInternal()
+    {
+        base.UnsubscribeInternal();
+        _quest.OnDataChanged -= DataChanged;
+
+    }
+
+    private async void DataChanged()
+    {
+        if(_currentState != _quest.State)
+        {
+            await Widget.Hide();
+        }
+    }
+
+    private void AddSubWidgets()
+    {
         switch (_quest.State)
         {
             case QuestState.New:
@@ -75,4 +99,5 @@ public class QuestBaseWidgetModel : WidgetViewModel
             buttonsWidget.Construct(_quest as IJourneyQuest);
         }
     }
+
 }

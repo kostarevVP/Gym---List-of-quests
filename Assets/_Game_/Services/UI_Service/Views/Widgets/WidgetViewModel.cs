@@ -41,7 +41,10 @@ namespace WKosArch.UIService.Views.Widgets
         private IWidget _widget;
         private IUserInterface _userInterface;
 
-
+        private void OnEnable()
+        {
+            Subscribe();
+        }
         private void OnDisable()
         {
             Unsubscribe();

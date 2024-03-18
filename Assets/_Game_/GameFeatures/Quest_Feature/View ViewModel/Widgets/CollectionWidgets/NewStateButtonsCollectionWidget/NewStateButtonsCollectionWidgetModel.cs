@@ -1,4 +1,3 @@
-using WKosArch.Extentions;
 using WKosArch.UIService.Views.Widgets;
 
 public class NewStateButtonsCollectionWidgetModel : WidgetViewModel
@@ -14,13 +13,11 @@ public class NewStateButtonsCollectionWidgetModel : WidgetViewModel
 
         Amount = _quest.Amount;
         CurrentAmount = _quest.CurrentAmount;
+        Refresh();
     }
 
     internal void ChangeState(QuestState state)
     {
-        Log.PrintYellow($"{_quest.Name} {_quest.State}");
-
         _quest.State = state;
-        Log.PrintYellow($"{_quest.Name} {_quest.State}");
     }
 }
