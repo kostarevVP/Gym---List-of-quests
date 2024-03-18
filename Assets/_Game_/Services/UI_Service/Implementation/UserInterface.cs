@@ -73,7 +73,7 @@ namespace WKosArch.Services.UIService.UI
                     }
                     else if (_currentWindowViewModel.Window.IsShown && !isHomeWindow)
                     {
-                        bool forcedHide = (i == 0);
+                        bool forcedHide = (i != 0);
 
                         _currentWindowViewModel.Window.Hide(forcedHide);
                     }

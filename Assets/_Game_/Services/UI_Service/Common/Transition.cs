@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace WKosArch.Services.UIService.Common
@@ -7,7 +7,7 @@ namespace WKosArch.Services.UIService.Common
     {
         public bool IsPlaying { get; private set; }
 
-        public async Task Play()
+        public async UniTask Play()
         {
             IsPlaying = true;
 
@@ -16,6 +16,6 @@ namespace WKosArch.Services.UIService.Common
             IsPlaying = false;
         }
 
-        protected abstract Task PlayInternal();
+        protected abstract UniTask PlayInternal();
     }
 }

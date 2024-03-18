@@ -461,7 +461,9 @@ GameObject:
   - component: {fileID: 3056258022959840864}
   - component: {fileID: 3800372551179852858}
   - component: {fileID: 5081794895648188916}
-  - component: {fileID: 6611549922847785312}
+  - component: {fileID: 8188077479025178358}
+  - component: {fileID: -6165766596731818974}
+  - component: {fileID: 5255063423141804572}
   m_Layer: 5
   m_Name: QuestBaseWidget
   m_TagString: Untagged
@@ -581,11 +583,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f8ae02a8408164a86bf868fd6858a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionIn: {fileID: 0}
-  _transitionOut: {fileID: 0}
+  _transitionIn: {fileID: 8188077479025178358}
+  _transitionOut: {fileID: -6165766596731818974}
   TitleTMProUGUI: {fileID: 6473869088131262044}
   DescriptionTMProUGUI: {fileID: 8561786650413429550}
---- !u!114 &6611549922847785312
+--- !u!114 &8188077479025178358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861172076739512115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f394506b771d09240b9cc6086f0eafe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6165766596731818974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861172076739512115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d771d1c7e81d5804b87137301734e1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 1
+  _ease: 19
+  _layoutElement: {fileID: 0}
+--- !u!114 &5255063423141804572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

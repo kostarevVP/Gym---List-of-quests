@@ -27,7 +27,6 @@ namespace WKosArch.UIService.Views
 
         public void Refresh()
         {
-
             RefreshInternal();
             
             View.Refresh();
