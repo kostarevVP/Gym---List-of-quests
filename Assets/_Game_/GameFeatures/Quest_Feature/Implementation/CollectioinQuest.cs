@@ -1,4 +1,7 @@
-﻿public class CollectioinQuest : Quest, ICollectionQuest 
+﻿using System;
+
+[Serializable]
+public class CollectioinQuest : Quest, ICollectionQuest 
 {
     public float ExecutionProgress { get => (float)_currentAmount / _amount; } 
     public string StuffName { get => _stuffName; set => _stuffName = value; }
@@ -29,11 +32,4 @@
     private string _stuffName;
     private int _amount;
     private int _currentAmount;
-
-
-
-    public override string ToString()
-    {
-        return $"Name={Name} {_stuffName} {_amount - _currentAmount}amount left";
-    }
 }

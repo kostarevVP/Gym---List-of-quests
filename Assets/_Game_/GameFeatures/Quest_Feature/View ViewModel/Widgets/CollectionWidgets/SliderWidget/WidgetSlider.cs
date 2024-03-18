@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 using WKosArch.UIService.Views.Widgets;
 
@@ -11,6 +12,6 @@ public class WidgetSlider : Widget<SliderWidgetModel>
     public override void Refresh()
     {
         base.Refresh();
-        _slider.value = ViewModel.ExecutionProgress;
+        _slider.DOValue(ViewModel.ExecutionProgress, 0.3f);
     }
 }

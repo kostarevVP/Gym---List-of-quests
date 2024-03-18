@@ -14,14 +14,21 @@ public class QuestFeature_Installer : FeatureInstaller
         var _staticDataService = container.Resolve<IStaticDataService>();
         var questsList = _staticDataService.QuestsList;
 
+        var saveHolders = container.Resolve<ISaveLoadHandlerService>();
+
         IQuestFeature feature = new QuestFeature(questsList);
+
+        saveHolders.AddLoadHolders(feature);
+        saveHolders.InformSaveHolders();
 
         BindFeature(container, feature);
 
         return feature;
     }
 
-    public override void Dispose() { }
+    public override void Dispose() 
+    {
+    }
 
     private void BindFeature(IDIContainer container, IQuestFeature feature)
     {

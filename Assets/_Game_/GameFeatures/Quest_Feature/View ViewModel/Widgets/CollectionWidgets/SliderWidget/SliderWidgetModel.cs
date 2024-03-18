@@ -1,4 +1,3 @@
-using WKosArch.Extentions;
 using WKosArch.UIService.Views.Widgets;
 
 public class SliderWidgetModel : WidgetViewModel

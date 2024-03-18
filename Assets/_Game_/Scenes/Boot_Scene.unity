@@ -395,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serviceFeaturesInstallers: []
   _gameplayFeatureInstallers:
+  - {fileID: 11400000, guid: 01f9ac501a6ea7648bbf3ed8bee95d18, type: 2}
   - {fileID: 11400000, guid: 913ea561b6ca9094baee490e1674c581, type: 2}
   - {fileID: 11400000, guid: 33b86da11e5b7cc4d88de88260c69b69, type: 2}
   _scene: {fileID: 102900000, guid: f77eb623bfe4bb14faebe16f012b5529, type: 3}
@@ -921,6 +922,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d771d1c7e81d5804b87137301734e1f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _duration: 1
+  _ease: 19
 --- !u!224 &33220627718699263
 RectTransform:
   m_ObjectHideFlags: 0
