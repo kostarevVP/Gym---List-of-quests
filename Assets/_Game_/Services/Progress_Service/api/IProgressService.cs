@@ -1,4 +1,5 @@
-﻿using WKosArch.Domain.Features;
+﻿using System;
+using WKosArch.Domain.Features;
 
 namespace Assets.Game.Services.ProgressService.api
 {

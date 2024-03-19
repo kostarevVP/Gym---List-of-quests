@@ -11,4 +11,9 @@ public class HomeSettingButtonViewModel : WindowViewModel, IHomeWindow
     {
         UI.Show<MainMenuWindowModel>();
     }
+
+    internal void OpenQuestWindow() 
+    {
+        UI.Show<QuestWindowModel>();
+    }
 }

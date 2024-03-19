@@ -18,8 +18,8 @@ public class QuestFeature_Installer : FeatureInstaller
 
         IQuestFeature feature = new QuestFeature(questsList);
 
-        saveHolders.AddLoadHolders(feature);
-        saveHolders.InformSaveHolders();
+        saveHolders.AddSaveLoadHolders(feature);
+        saveHolders.InformLoadHolders();
 
         BindFeature(container, feature);
 

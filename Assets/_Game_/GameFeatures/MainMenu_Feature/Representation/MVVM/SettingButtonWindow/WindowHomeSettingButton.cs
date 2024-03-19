@@ -6,6 +6,8 @@ public class WindowHomeSettingButton : Window<HomeSettingButtonViewModel>
 {
     [Space]
     [SerializeField] private Button _settingButton;
+    [Space]
+    [SerializeField] private Button _opentQuestButton;
 
     public override void Subscribe()
     {

@@ -9,29 +9,33 @@ public class SaveLoadHandlerService : ISaveLoadHandlerService
     private List<ILoadProgress> _loadHolders = new();
     private List<ISavedProgress> _saveHolders = new();
     private readonly IProgressService _progressService;
+    private readonly ISaveLoadService _saveLoadService;
 
-    public SaveLoadHandlerService(IProgressService progressService)
+    public SaveLoadHandlerService(IProgressService progressService, ISaveLoadService saveLoadService)
     {
         _isReady = true;
         _progressService = progressService;
+        _saveLoadService = saveLoadService;
+
+        _saveLoadService.OnSaveStarted += InformSaveHolders;
     }
 
-    public void AddLoadHolders(ILoadProgress loadHolders)
+    public void AddSaveLoadHolders(ILoadProgress loadHolders)
     {
-        if (loadHolders is ISavedProgress)
-            _saveHolders.Add(loadHolders as ISavedProgress);
-        else
-            _loadHolders.Add(loadHolders);
+        //if (loadHolders is ISavedProgress)
+        //    _saveHolders.Add(_saveHolders as ISavedProgress);
+
+        _loadHolders.Add(loadHolders);
     }
 
     public void InformSaveHolders()
     {
         var progress = _progressService.Progress;
 
-        foreach (var holder in _saveHolders)
+        foreach (var holder in _loadHolders)
         {
-            holder.SaveProgress(progress);
-            holder.LoadProgress(progress);
+            if(holder is ISavedProgress saveHolder)
+                saveHolder.SaveProgress(progress);
         }
     }
 

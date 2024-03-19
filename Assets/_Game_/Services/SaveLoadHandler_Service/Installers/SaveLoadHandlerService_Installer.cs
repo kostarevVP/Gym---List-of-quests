@@ -14,8 +14,9 @@ public class SaveLoadHandlerService_Installer : FeatureInstaller
     public override IFeature Create(IDIContainer container)
     {
         IProgressService progressService = container.Resolve<IProgressService>();
+        ISaveLoadService saveLoadService = container.Resolve<ISaveLoadService>();
 
-        _feature = new SaveLoadHandlerService(progressService);
+        _feature = new SaveLoadHandlerService(progressService, saveLoadService);
 
         BindFeature(container, _feature);
 
@@ -24,7 +25,6 @@ public class SaveLoadHandlerService_Installer : FeatureInstaller
 
     public override void Dispose() 
     {
-        Log.PrintYellow($"Dispose SaveLoadHandlerService_Installer");
         _feature.Clear();
     }
 
