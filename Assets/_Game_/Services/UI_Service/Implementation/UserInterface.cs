@@ -28,7 +28,7 @@ namespace WKosArch.Services.UIService.UI
 
             if (IsHomeWindowType(currentWindowType))
             {
-                OpenCloseGameWindow();
+                OpenGameCloseWindow();
             }
 
             if (hideCurrentWindow)
@@ -124,9 +124,9 @@ namespace WKosArch.Services.UIService.UI
             _uiFactory.Build(config);
         }
 
-        private void OpenCloseGameWindow()
+        private void OpenGameCloseWindow()
         {
-            Log.PrintColor($"OpenCloseGameWindow", Color.red);
+            Log.PrintColor($"OpenGameCloseWindow", Color.red);
         }
 
         private bool IsHomeWindowType(Type windowType) =>
