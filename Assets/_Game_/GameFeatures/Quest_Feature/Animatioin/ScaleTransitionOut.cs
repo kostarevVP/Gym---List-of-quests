@@ -1,10 +1,9 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System.Collections.Generic;
 using UnityEngine;
 using WKosArch.Services.UIService.Common;
 
-public class ScaleFadeTransitionOut : Transition
+public class ScaleTransitionOut : Transition
 {
     [SerializeField]
     private float _duration = 1f;

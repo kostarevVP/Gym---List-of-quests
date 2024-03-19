@@ -969,6 +969,8 @@ GameObject:
   - component: {fileID: 8350755855627510940}
   - component: {fileID: 4861344124513083390}
   - component: {fileID: 6566498896796610335}
+  - component: {fileID: -879670597409129395}
+  - component: {fileID: 4342682724213189120}
   m_Layer: 5
   m_Name: QuestsWindow
   m_TagString: Untagged
@@ -1026,13 +1028,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755f100b41c4cbf409ab582e26b1e5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionIn: {fileID: 0}
-  _transitionOut: {fileID: 0}
+  _transitionIn: {fileID: 4342682724213189120}
+  _transitionOut: {fileID: -879670597409129395}
   _closeButton: {fileID: 209613244215420333}
   _backButton: {fileID: 2413521820864487970}
   _activeQuestsButton: {fileID: 7748687105937072908}
   _disactiveQuestsButton: {fileID: 1631386625566510154}
   _newQuestsButton: {fileID: 7892578444863206697}
+--- !u!114 &-879670597409129395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303771842145741997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68b90e5439427045a2fa4ad228be2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.3
+  _ease: 20
+--- !u!114 &4342682724213189120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303771842145741997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedf181607e48a0468e849fa73052d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.3
+  _ease: 21
 --- !u!1 &5350261812485333843
 GameObject:
   m_ObjectHideFlags: 0

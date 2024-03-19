@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using WKosArch.Services.UIService.Common;
 
-public class ScaleFadeTransitionIn : Transition
+public class NothingTransitionIn : Transition
 {
     protected override UniTask PlayInternal()
     {

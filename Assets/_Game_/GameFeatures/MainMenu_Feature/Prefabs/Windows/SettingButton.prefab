@@ -201,7 +201,7 @@ MonoBehaviour:
   _closeButton: {fileID: 0}
   _backButton: {fileID: 0}
   _settingButton: {fileID: 6857464436222953423}
-  _opentQuestButton: {fileID: 9016672853020631026}
+  _openQuestButton: {fileID: 9016672853020631026}
 --- !u!1001 &1429261850283334146
 PrefabInstance:
   m_ObjectHideFlags: 0

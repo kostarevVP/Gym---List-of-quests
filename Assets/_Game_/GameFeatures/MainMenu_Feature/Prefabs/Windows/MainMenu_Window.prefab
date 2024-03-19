@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2090357814624075155}
   - component: {fileID: 8295979030991519121}
   - component: {fileID: 599133409862149525}
+  - component: {fileID: 6680581566465189090}
+  - component: {fileID: 5061450925046217436}
   m_Layer: 5
   m_Name: MainMenu_Window
   m_TagString: Untagged
@@ -66,14 +68,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6f39509b965ca4289574b11f483bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionIn: {fileID: 0}
-  _transitionOut: {fileID: 0}
+  _transitionIn: {fileID: 5061450925046217436}
+  _transitionOut: {fileID: 6680581566465189090}
   _closeButton: {fileID: 3744570008101064539}
   _backButton: {fileID: 2835237085178587278}
   AboutButton: {fileID: 1043545060568012771}
   SoundButton: {fileID: 8520978428048692456}
   QuitButton: {fileID: 8486898096087253265}
   RestartButton: {fileID: 6821963936499945165}
+--- !u!114 &6680581566465189090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103598324810646785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68b90e5439427045a2fa4ad228be2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.3
+  _ease: 21
+--- !u!114 &5061450925046217436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103598324810646785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedf181607e48a0468e849fa73052d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.3
+  _ease: 20
 --- !u!1 &216991643472718377
 GameObject:
   m_ObjectHideFlags: 0
